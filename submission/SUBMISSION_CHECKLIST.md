@@ -15,7 +15,7 @@
 | **Clean README with Project Overview, Setup & Usage Instructions** | [`README.md`](../README.md) | Verified Complete |
 | **Deployment Instructions / Run Guide** | [`DEPLOYMENT.md`](../DEPLOYMENT.md) | Verified Complete |
 | **Clean Pitch Deck (PDF or Markdown/PPT)** | [`submission/PITCH_DECK.md`](PITCH_DECK.md) | Verified Complete |
-| **Short Demo Video (Max 3 Minutes)** | Script in [`submission/DEMO_VIDEO_SCRIPT.md`](DEMO_VIDEO_SCRIPT.md) | Ready for Recording |
+| **Short Demo Video (Max 3 Minutes)** | Script in [`submission/DEMO_VIDEO_SCRIPT.md`] | Ready for Recording |
 | **Live Production Deployment** | [Vercel Deployment URL](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/) | Verified Active |
 | **License** | [`LICENSE`](../LICENSE) (Apache 2.0) | Verified Complete |
 
