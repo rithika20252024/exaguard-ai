@@ -206,6 +206,20 @@ exaguard/
     ├── DEMO_VIDEO_SCRIPT.md       # 3-minute video recording script
     └── SUBMISSION_CHECKLIST.md    # Hackathon submission checklist
 ```
+---
+## Submission Deliverables Verification
+
+| Deliverable Required | Location in Repository | Status |
+| :--- | :--- | :---: |
+| **Source Code** | Full repository (`/frontend`, `/backend`, `/core`, `/exasol_db`) | Verified Complete |
+| **Clean README with Project Overview, Setup & Usage Instructions** | [`README.md`](../README.md) | Verified Complete |
+| **Deployment Instructions / Run Guide** | [`DEPLOYMENT.md`](../DEPLOYMENT.md) | Verified Complete |
+| **Clean Pitch Deck (PDF or Markdown/PPT)** | [`submission/PITCH_DECK.md`](PITCH_DECK.md) | Verified Complete |
+| **Short Demo Video (Max 3 Minutes)** | demo video in [`submission/ExaGuard AI Agent Observability and Governance.mp4`](ExaGuard AI Agent Observability and Governance.mp4) | Ready for Recording |
+
+| **License** | [`LICENSE`](../LICENSE) (Apache 2.0) | Verified Complete |
+
+---
 
 ---
 
