@@ -4,7 +4,7 @@
 
 ---
 
-## Slide 1: Cover & Vision
+##  Cover & Vision
 - **Product**: ExaGuard AI
 - **One-Liner**: Real-Time AI Agent Security, Auditability, and Compliance powered by Exasol's In-Memory Columnar Speed.
 - **Team**: ExaGuard Team (Exasol Hackathon 2026)
@@ -12,7 +12,7 @@
 
 ---
 
-## Slide 2: The Enterprise Agent Problem
+##  The Enterprise Agent Problem
 - **The Explosion of AI Agents & MCP**: Autonomous agents and Model Context Protocol (MCP) servers now execute financial trades, triage healthcare records, and run cloud infrastructure scripts.
 - **The Hidden Vulnerabilities**:
   1. **Prompt Injections & MCP Exploits**: Adversaries hijacking agent tools and MCP JSON-RPC parameters to exfiltrate database contents.
@@ -22,7 +22,7 @@
 
 ---
 
-## Slide 3: The Solution — ExaGuard AI
+##  The Solution — ExaGuard AI
 - **Inline Interception Gateway & MCP Firewall**: Inspects every agent prompt, tool call, and MCP JSON-RPC parameter before execution.
 - **Sub-Second Guardrails**: Automatic prompt injection blocking and instantaneous regex/heuristic PII redaction.
 - **Automated AI Red Teaming**: Built-in 7-vector adversarial battery stress-testing agent defenses on demand.
@@ -31,7 +31,7 @@
 
 ---
 
-## Slide 4: Deep Exasol Integration (Why Exasol?)
+##  Deep Exasol Integration (Why Exasol?)
 - **High-Velocity Telemetry**: An enterprise running 1,000 agents produces millions of telemetry rows daily.
 - **Columnar Analytical Horsepower**:
   - Exasol Personal provides **sub-2ms query times** across multi-dimensional token, latency, and threat groupings.
@@ -40,7 +40,7 @@
 
 ---
 
-## Slide 5: System Architecture & User Experience
+##  System Architecture & User Experience
 ```
 [AI Agents & MCP Tools] ──> [ExaGuard Interceptor & Firewall] ──> [Exasol Personal DB]
                                        │                                   │
@@ -57,7 +57,7 @@
 
 ---
 
-## Slide 6: Business Impact & Market Opportunity
+##  Business Impact & Market Opportunity
 - **Market Opportunity**: The enterprise AI governance and security market is projected to reach $10B+ by 2030.
 - **Competitive Advantage**: Built natively on Exasol for ultra-low latency analytics where PostgreSQL and MongoDB fail at scale.
 - **Production-Ready**: TypeScript + React frontend, FastAPI backend, containerized Docker image, zero-config embedded fallback, and full compliance readiness.
