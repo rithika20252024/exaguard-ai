@@ -93,13 +93,9 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 
 ## 5. Setup & Usage Instructions
 
-### Method 1: Access Live Deployment (Recommended)
-No setup required. Access the live production instance directly:
-- **Production Dashboard:** [https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/)
 
----
 
-### Method 2: Local Run (Full-Stack FastAPI + TypeScript React)
+### Method 1: Local Run (Full-Stack FastAPI + TypeScript React)
 
 #### 1. Clone the Repository
 ```bash
@@ -116,12 +112,16 @@ pip install -r requirements.txt
 ```bash
 python backend/server.py
 ```
+#### mac
+```bash
+python3 backend/server.py
+```
 - Open your browser at: `http://localhost:8000`
 - API documentation available at: `http://localhost:8000/docs`
 
 ---
 
-### Method 3: Containerized Docker Deployment
+### Method 2: Containerized Docker Deployment
 
 To launch Exasol Personal database and ExaGuard in coordinated Docker containers:
 ```bash
