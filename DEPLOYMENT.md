@@ -6,7 +6,7 @@ This document provides complete instructions for running, testing, and deploying
 
 ## Live Production Deployment
 
-- **Production URL:** [https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/)
+
 - **Hosting Platform:** Vercel (Edge Network + Serverless Python 3.12 Runtime)
 - **Frontend Bundle:** React 18, TypeScript, Tailwind CSS, Vite
 - **Backend API:** FastAPI REST Gateway with PyExasol integration
