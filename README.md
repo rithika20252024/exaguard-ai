@@ -1,6 +1,6 @@
 # ExaGuard AI — Enterprise AI Agent Observability & Real-Time Governance
 
-[![Live Demo](https://img.shields.io/badge/Live_Deployment-Vercel_Production-00C9FF.svg)](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/)
+
 [![Exasol Hackathon](https://img.shields.io/badge/Exasol_Hackathon-AI_Trust%2C_Safety_%26_Governance-0284C7.svg)](https://www.exasol.com/events/exasol-devjam/)
 [![TypeScript](https://img.shields.io/badge/Frontend-TypeScript_%2B_React-3178C6.svg)](https://www.typescriptlang.org/)
 [![Python 3.10+](https://img.shields.io/badge/Backend-FastAPI_%2B_Python-blue.svg)](https://www.python.org/)
