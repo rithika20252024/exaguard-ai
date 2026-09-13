@@ -7,8 +7,7 @@
 [![Database](https://img.shields.io/badge/Database-Exasol_Personal-FF6B6B.svg)](https://github.com/exasol/exasol-personal)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 
-> **Live Application URL:** [https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/)
-
+>
 ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
 
 ---
@@ -146,15 +145,15 @@ docker compose up -d
 
 ---
 
-## 7. Judging Criteria Alignment
+## 7.  Criteria Alignment
 
-| Evaluation Criterion | Weight | Alignment & Evidence |
-| :--- | :---: | :--- |
-| **Effective Use of Exasol Personal** | **25%** | Exasol Personal is the central data platform. Telemetry streams into columnar tables (`AGENT_TRACES`, `SECURITY_ALERTS`); analytical SQL procedures compute aggregations and in-database 3-Sigma statistical anomalies in under 2 milliseconds. |
-| **Innovation & Problem Impact** | **25%** | Solves the primary barrier to generative AI agent adoption: security, trust, and auditability. Features the world's first Model Context Protocol (MCP) JSON-RPC parameter firewall. |
-| **Technical Excellence** | **20%** | Full-stack production software architecture combining a type-safe TypeScript React frontend, FastAPI backend, PyExasol driver, and resilient fallback engine. |
-| **Solution Design & User Experience** | **15%** | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of informal emoji symbols. |
-| **Presentation & Documentation** | **15%** | Complete pitch deck (`submission/PITCH_DECK.md`), timed video recording script (`submission/DEMO_VIDEO_SCRIPT.md`), deployment guide (`DEPLOYMENT.md`), and clean single initial commit on GitHub. |
+| Evaluation Criterion  | Alignment & Evidence |
+| :---  | :--- |
+| **Effective Use of Exasol Personal** | Exasol Personal is the central data platform. Telemetry streams into columnar tables (`AGENT_TRACES`, `SECURITY_ALERTS`); analytical SQL procedures compute aggregations and in-database 3-Sigma statistical anomalies in under 2 milliseconds. |
+| **Innovation & Problem Impact**  | Solves the primary barrier to generative AI agent adoption: security, trust, and auditability. Features the world's first Model Context Protocol (MCP) JSON-RPC parameter firewall. |
+| **Technical Excellence**  | Full-stack production software architecture combining a type-safe TypeScript React frontend, FastAPI backend, PyExasol driver, and resilient fallback engine. |
+| **Solution Design & User Experience**  | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of informal emoji symbols. |
+| **Presentation & Documentation**  | Complete pitch deck (`submission/PITCH_DECK.md`), timed video recording script (`submission/DEMO_VIDEO_SCRIPT.md`), deployment guide (`DEPLOYMENT.md`), and clean single initial commit on GitHub. |
 
 ---
 
