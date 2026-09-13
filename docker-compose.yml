@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  exasoldb:
+    image: exasol/docker-db:latest
+    container_name: exasol-personal-db
+    ports:
+      - "8563:8563"
+    environment:
+      - EXASOL_PASSWORD=exasol
+    privileged: true
+    restart: unless-stopped
+
+  exaguard-dashboard:
+    build: .
+    container_name: exaguard-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - EXASOL_HOST=exasoldb
+      - EXASOL_PORT=8563
+      - EXASOL_USER=sys
+      - EXASOL_PASSWORD=exasol
+      - EXASOL_SCHEMA=EXAGUARD
+    depends_on:
+      - exasoldb
