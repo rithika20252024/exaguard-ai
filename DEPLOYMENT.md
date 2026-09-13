@@ -36,16 +36,9 @@ Internet / Client Browser
 
 ## Deployment Options
 
-### Option 1: Live Cloud Instance (Zero-Installation)
 
-Access the live cloud deployment immediately in any modern web browser:
-- Open: [https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/](https://exaguard-ai-2w83-2sywi12ro-rithika20252024s-projects.vercel.app/)
 
-All interactive modules—including the Security Sandbox, MCP Firewall, AI Red Team Suite, and Exasol Benchmark—are operational without local setup.
-
----
-
-### Option 2: Local Deployment (Python + FastAPI Backend)
+### Option 1: Local Deployment (Python + FastAPI Backend)
 
 To run the full-stack platform locally on macOS, Linux, or Windows (WSL):
 
@@ -74,7 +67,7 @@ The FastAPI backend boots and automatically serves the pre-compiled TypeScript R
 
 ---
 
-### Option 3: Docker Deployment (Containerized Exasol + Dashboard)
+### Option 2: Docker Deployment (Containerized Exasol + Dashboard)
 
 To deploy both the native Exasol Personal database and ExaGuard in isolated containers:
 
@@ -99,7 +92,7 @@ docker compose down
 
 ---
 
-### Option 4: Deploying Your Own Instance on Vercel
+### Option 5: Deploying Your Own Instance on Vercel
 
 If you wish to deploy a private instance to your own Vercel account:
 
