@@ -93,7 +93,7 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 
 ## 5. Setup & Usage Instructions
 
-### Method 1: Access Live Deployment (Recommended)
+### Method 1: Access Live Deployment (Recommended but it might not work if free trail end wed\ don't have premium so recommend to use localhost)
 No setup required. Access the live production instance directly:
 - **Production Dashboard:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
 ---
