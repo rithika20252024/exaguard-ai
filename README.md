@@ -1,6 +1,6 @@
 # ExaGuard AI — Enterprise AI Agent Observability & Real-Time Governance
 
-**Live Application URL:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
+
 [![Exasol Hackathon](https://img.shields.io/badge/Exasol_Hackathon-AI_Trust%2C_Safety_%26_Governance-0284C7.svg)](https://www.exasol.com/events/exasol-devjam/)
 [![TypeScript](https://img.shields.io/badge/Frontend-TypeScript_%2B_React-3178C6.svg)](https://www.typescriptlang.org/)
 [![Python 3.10+](https://img.shields.io/badge/Backend-FastAPI_%2B_Python-blue.svg)](https://www.python.org/)
@@ -11,7 +11,7 @@
 ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
 
 ---
-
+**Live Application URL:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
 ## 1. Project Overview
 
 As enterprises deploy autonomous AI agents across finance, healthcare, customer support, and cloud infrastructure, they face severe operational and security liabilities:
