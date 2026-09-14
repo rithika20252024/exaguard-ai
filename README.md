@@ -124,7 +124,12 @@ python3 backend/server.py
 
 ---
 
-### Method 3: Containerized Docker Deployment
+### Method 3: Containerized Docker Deployment(make sure to download docker in desktop)
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/rithika20252024/exaguard-ai.git
+cd exaguard-ai
+```
 
 To launch Exasol Personal database and ExaGuard in coordinated Docker containers:
 ```bash
