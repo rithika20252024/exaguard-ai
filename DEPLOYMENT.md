@@ -129,9 +129,14 @@ The FastAPI backend boots and automatically serves the pre-compiled TypeScript R
 ### Option 3: Docker Deployment (Containerized Exasol + Dashboard)
 
 To deploy both the native Exasol Personal database and ExaGuard in isolated containers:
-
+####  Clone the Repository
+```bash
+git clone https://github.com/rithika20252024/exaguard-ai.git
+cd exaguard-ai
+```
 #### 1. Prerequisites
 - Docker & Docker Compose
+
 
 #### 2. Launch Containers
 ```bash
