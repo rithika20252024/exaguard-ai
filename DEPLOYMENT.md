@@ -36,11 +36,67 @@ Internet / Client Browser
 
 ## Deployment Options
 
-### Option 1: Access Live Deployment (Recommended)
+### Option 1: Access Live Deployment (Recommended but it might not work if free trail end  don't have premium so recommend to use localhost if not working)
 No setup required. Access the live production instance directly:
 - **Production Dashboard:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
 ---
+### Docker Configuration Files(port 8000)
+```bash
+# ExaGuard AI — FastAPI + React Full-Stack Application
+# Multi-stage build: install dependencies, then slim runtime image
 
+# ── Stage 1: builder ─────────────────────────────────────────────────────────
+FROM python:3.12-slim-bookworm AS builder
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy dependency manifest first for layer caching
+COPY requirements.txt .
+
+# Install all Python dependencies into a prefix directory
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+# Also install gunicorn (production ASGI server)
+RUN pip install --no-cache-dir --prefix=/install "gunicorn>=21" "uvicorn[standard]>=0.27"
+
+# ── Stage 2: runtime ─────────────────────────────────────────────────────────
+FROM python:3.12-slim-bookworm AS runtime
+
+WORKDIR /app
+
+# Runtime system packages: curl for health probes
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy installed packages from builder
+COPY --from=builder /install /usr/local
+
+# Copy application source
+COPY . .
+
+# Create writable data directory for SQLite fallback DB
+RUN mkdir -p /app/data && chmod 777 /app/data
+
+# Runtime constants — no user secrets here
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+# Force embedded SQLite mode: skip pyexasol connection attempt entirely
+# (users who want native Exasol can override EXASOL_HOST and set AUTO_FALLBACK_SQLITE=False at runtime)
+ENV AUTO_FALLBACK_SQLITE=True
+
+EXPOSE 8000
+
+CMD ["gunicorn", "backend.server:app", \
+     "--worker-class", "uvicorn.workers.UvicornWorker", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "2", \
+     "--timeout", "120"] ```
 ### Option 2: Local Deployment (Python + FastAPI Backend)
 
 To run the full-stack platform locally on macOS, Linux, or Windows (WSL):
