@@ -7,7 +7,7 @@ This document provides complete instructions for running, testing, and deploying
 ## Live Production Deployment
 
 
-- **Hosting Platform:** Vercel (Edge Network + Serverless Python 3.12 Runtime)
+- **Hosting Platform:** kuberns (Edge Network + Serverless Python 3.12 Runtime)
 - **Frontend Bundle:** React 18, TypeScript, Tailwind CSS, Vite
 - **Backend API:** FastAPI REST Gateway with PyExasol integration
 - **Deployment Status:** Active, Continuous Deployment via GitHub `main` branch
@@ -20,7 +20,7 @@ This document provides complete instructions for running, testing, and deploying
 Internet / Client Browser
             │
             ▼
-[ Vercel Edge CDN & Routing ]
+[ kuberns Edge CDN & Routing ]
    ├── Static Asset Delivery (`/assets/*`, compiled TypeScript React SPA)
    └── Serverless Function Invocation (`/api/*` -> `backend.server:app`)
             │
@@ -92,14 +92,14 @@ docker compose down
 
 ---
 
-### Option 5: Deploying Your Own Instance on Vercel
+### Option 5: Deploying Your Own Instance on Kubern
 
-If you wish to deploy a private instance to your own Vercel account:
+If you wish to deploy a private instance to your own Kubern account:
 
-1. Fork or import the repository `https://github.com/rithika20252024/exaguard-ai` on Vercel.
-2. Vercel automatically detects `pyproject.toml` with the PEP 621 table and entrypoint:
+1. Fork or import the repository `https://github.com/rithika20252024/exaguard-ai` on Kubern.
+2. Kubern automatically detects `pyproject.toml` with the PEP 621 table and entrypoint:
    ```toml
-   [tool.vercel]
+
    entrypoint = "backend.server:app"
    ```
 3. Click **Deploy**. The build completes in under 45 seconds.
