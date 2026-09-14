@@ -36,9 +36,12 @@ Internet / Client Browser
 
 ## Deployment Options
 
+### Option 1: Access Live Deployment (Recommended)
+No setup required. Access the live production instance directly:
+- **Production Dashboard:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
+---
 
-
-### Option 1: Local Deployment (Python + FastAPI Backend)
+### Option 2: Local Deployment (Python + FastAPI Backend)
 
 To run the full-stack platform locally on macOS, Linux, or Windows (WSL):
 
@@ -67,7 +70,7 @@ The FastAPI backend boots and automatically serves the pre-compiled TypeScript R
 
 ---
 
-### Option 2: Docker Deployment (Containerized Exasol + Dashboard)
+### Option 3: Docker Deployment (Containerized Exasol + Dashboard)
 
 To deploy both the native Exasol Personal database and ExaGuard in isolated containers:
 
@@ -92,7 +95,7 @@ docker compose down
 
 ---
 
-### Option 5: Deploying Your Own Instance on Kubern
+### Option 4: Deploying Your Own Instance on Kubern
 
 If you wish to deploy a private instance to your own Kubern account:
 
