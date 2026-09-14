@@ -1,6 +1,6 @@
 # ExaGuard AI — Enterprise AI Agent Observability & Real-Time Governance
 
-
+**Live Application URL:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
 [![Exasol Hackathon](https://img.shields.io/badge/Exasol_Hackathon-AI_Trust%2C_Safety_%26_Governance-0284C7.svg)](https://www.exasol.com/events/exasol-devjam/)
 [![TypeScript](https://img.shields.io/badge/Frontend-TypeScript_%2B_React-3178C6.svg)](https://www.typescriptlang.org/)
 [![Python 3.10+](https://img.shields.io/badge/Backend-FastAPI_%2B_Python-blue.svg)](https://www.python.org/)
@@ -93,9 +93,12 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 
 ## 5. Setup & Usage Instructions
 
+### Method 1: Access Live Deployment (Recommended)
+No setup required. Access the live production instance directly:
+- **Production Dashboard:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
+---
 
-
-### Method 1: Local Run (Full-Stack FastAPI + TypeScript React)
+### Method 2: Local Run (Full-Stack FastAPI + TypeScript React)
 
 #### 1. Clone the Repository
 ```bash
@@ -121,7 +124,7 @@ python3 backend/server.py
 
 ---
 
-### Method 2: Containerized Docker Deployment
+### Method 3: Containerized Docker Deployment
 
 To launch Exasol Personal database and ExaGuard in coordinated Docker containers:
 ```bash
