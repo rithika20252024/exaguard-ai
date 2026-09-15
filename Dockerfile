@@ -16,10 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy full application
 COPY . .
 
-# Expose Streamlit default port
+
+#Expose React + FastAPI application port
 
 EXPOSE 8000
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8000/api/health || exit 1
 
 ENTRYPOINT ["uvicorn", "backend.server:app", "--host", "0.0.0.0", "--port", "8000"]
