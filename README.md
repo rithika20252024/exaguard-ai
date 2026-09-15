@@ -11,7 +11,7 @@
 ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
 
 ---
-**Live Application URL:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
+
 ## 1. Project Overview
 
 As enterprises deploy autonomous AI agents across finance, healthcare, customer support, and cloud infrastructure, they face severe operational and security liabilities:
@@ -93,12 +93,9 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 
 ## 5. Setup & Usage Instructions
 
-### Method 1: Access Live Deployment (Recommended but it might not work if free trail end  don't have premium so recommend to use localhost if not working)
-No setup required. Access the live production instance directly:
-- **Production Dashboard:** [https://exaguard-ai-main-8851f2b.kuberns.cloud/](https://exaguard-ai-main-8851f2b.kuberns.cloud/)
----
 
-### Method 2: Local Run (Full-Stack FastAPI + TypeScript React)
+
+### Method : Local Run (Full-Stack FastAPI + TypeScript React)
 
 #### 1. Clone the Repository
 ```bash
@@ -124,21 +121,7 @@ python3 backend/server.py
 
 ---
 
-### Method 3: Containerized Docker Deployment(make sure to download docker in desktop)
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/rithika20252024/exaguard-ai.git
-cd exaguard-ai
-```
 
-To launch Exasol Personal database and ExaGuard in coordinated Docker containers:
-```bash
-docker compose up -d
-```
-- Exasol Personal Database: Port `8563`
-- ExaGuard Dashboard: Port `8000`
-
----
 
 ## 6. Dashboard Modules & Usage Guide
 
