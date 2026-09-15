@@ -29,5 +29,5 @@
 | **Effective Use of Exasol Personal**  | Telemetry streams into columnar tables (`AGENT_TRACES`, `SECURITY_ALERTS`); analytical SQL procedures compute multi-dimensional aggregations and in-database 3-Sigma statistical anomalies in under 2 milliseconds. |
 | **Innovation & Problem Impact**  | Solves the number-one enterprise barrier to AI agent adoption: security, trust, and auditability. Features the world's first Model Context Protocol (MCP) JSON-RPC parameter firewall. |
 | **Technical Excellence** | Full-stack production software architecture combining a type-safe TypeScript React frontend, FastAPI backend, PyExasol driver, and resilient zero-config fallback mode. |
-| **Solution Design & User Experience** | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of informal emoji symbols. |
+| **Solution Design & User Experience** | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of informal template. |
 | **Presentation, Demo & Documentation** | Complete pitch deck, timed 3-minute video recording script, comprehensive deployment guide, and a pristine single initial commit on GitHub. |
