@@ -8,5 +8,6 @@ echo "============================================================"
 echo "📦 Verifying dependencies..."
 pip install -r requirements.txt --quiet
 # Launch Streamlit Command Center
-echo "🚀 Launching ExaGuard Dashboard on http://localhost:8501 ..."
-streamlit run dashboard/app.py
+
+echo "🚀 Launching ExaGuard React Dashboard on http://localhost:8000 ..."
+python3 -m uvicorn backend.server:app --host 0.0.0.0 --port 8000 --reload
