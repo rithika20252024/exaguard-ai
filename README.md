@@ -156,9 +156,6 @@ exaguard/
 ├── DEPLOYMENT.md                  # Deployment instructions & run guide
 ├── requirements.txt               # Backend Python dependencies
 ├── pyproject.toml                 # PEP 621 metadata & Vercel entrypoint
-├── Dockerfile                     # Container deployment image
-├── docker-compose.yml             # Exasol Personal + ExaGuard stack
-├── render.yaml                    # Render.com deployment configuration
 ├── backend/
 │   └── server.py                  # FastAPI enterprise REST API
 ├── frontend/                      # TypeScript + React + Tailwind CSS Dashboard
