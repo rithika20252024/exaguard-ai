@@ -26,6 +26,10 @@ from core.mcp_firewall import MCPFirewall
 from core.red_team import RedTeamRunner, RED_TEAM_ATTACK_SUITE
 from simulator.agent_traffic_generator import AgentTrafficSimulator, AGENTS
 
+import streamlit.components.v1 as components
+import socket
+import threading
+
 # Set page config
 st.set_page_config(
     page_title=f"{APP_NAME} | Enterprise AI Governance",
@@ -34,44 +38,72 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for polished Enterprise Cyber Look
-st.markdown("""
-<style>
-    .main-header {
-        font-size: 2.2rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 0px;
-    }
-    .sub-header {
-        font-size: 1.02rem;
-        color: #94A3B8;
-        margin-bottom: 18px;
-    }
-    .metric-card {
-        background-color: #1E293B;
-        border-radius: 10px;
-        padding: 16px;
-        border: 1px solid #334155;
-    }
-</style>
-""", unsafe_allow_html=True)
+# Function to check if local FastAPI backend is active on port 8000
+def is_port_open(port=8000):
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(0.4)
+            return s.connect_ex(('127.0.0.1', port)) == 0
+    except Exception:
+        return False
+
+def auto_start_local_backend():
+    if not is_port_open(8000):
+        def _run_server():
+            try:
+                import uvicorn
+                from backend.server import app as fastapi_app
+                config = uvicorn.Config(fastapi_app, host="127.0.0.1", port=8000, log_level="warning")
+                server = uvicorn.Server(config)
+                server.run()
+            except Exception:
+                pass
+        t = threading.Thread(target=_run_server, daemon=True)
+        t.start()
+        time.sleep(1.0)
+
+# Detect best available URL for the React 18 application
+LIVE_CLOUD_URL = os.getenv("EXAGUARD_LIVE_URL", "https://exaguard-ai-main-8851f2b.kuberns.cloud/")
+local_backend_active = is_port_open(8000)
 
 # Auto-seed initial telemetry if database is fresh
 kpis = AnalyticsQueries.get_executive_kpis()
-if kpis["total_traces"] < 20:
+if kpis.get("total_traces", 0) < 20:
     AgentTrafficSimulator.seed_historical_telemetry(count=40)
     kpis = AnalyticsQueries.get_executive_kpis()
 
 # --- SIDEBAR CONTROLS ---
 with st.sidebar:
-    st.image("https://raw.githubusercontent.com/feathericons/feather/master/icons/shield.svg", width=44)
+    st.image("https://raw.githubusercontent.com/feathericons/feather/master/icons/shield.svg", width=40)
     st.markdown(f"## **{APP_NAME}**")
     st.caption(f"**Track:** {TRACK}")
     st.markdown("---")
 
+    # UI Experience Switcher
+    st.markdown("### 🖥️ **Interface Experience**")
+    ui_mode = st.radio(
+        "Select UI Mode:",
+        ["React 18 + TypeScript (Enterprise SaaS)", "Native Python Streamlit View"],
+        index=0,
+        help="Switch between the React 18 + Tailwind CSS production app and the native Python Streamlit dashboard."
+    )
+
+    if ui_mode.startswith("React 18"):
+        auto_start_local_backend()
+        st.markdown("---")
+        st.markdown("### 🌐 **React Gateway Source**")
+        source_opt = st.selectbox(
+            "Target Endpoint:",
+            ["Live Cloud Deployment (Recommended)", "Localhost Backend (port 8000)"],
+            index=0
+        )
+        if "Localhost" in source_opt:
+            react_src_url = "http://localhost:8000"
+        else:
+            react_src_url = LIVE_CLOUD_URL
+        st.caption(f"Connected: `{react_src_url}`")
+
+    st.markdown("---")
     st.markdown("### 🗄️ **Exasol Engine Status**")
     if db_manager.is_connected_to_exasol:
         st.success(f"🟢 **Connected to Exasol Personal**\n`{db_manager.db_engine_name}`")
@@ -94,40 +126,90 @@ with st.sidebar:
         st.rerun()
 
     st.markdown("---")
-    st.markdown("### 🌟 **Innovation Features**")
-    st.markdown("- 🔌 **MCP Tool Firewall Proxy**")
-    st.markdown("- ⚔️ **Automated AI Red Teaming**")
-    st.markdown("- 📈 **In-Database Z-Score Anomalies**")
-    st.markdown("- 📜 **SOC2 / EU AI Act Certifier**")
     st.caption("Exasol AI + Data Challenge 2026")
 
 
-# --- TOP HEADER ---
-col_head1, col_head2 = st.columns([3, 1])
-with col_head1:
-    st.markdown(f"<div class='main-header'>🛡️ {APP_NAME}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='sub-header'>{APP_SUBTITLE} • <i>{POWERED_BY}</i></div>", unsafe_allow_html=True)
-with col_head2:
-    st.metric(
-        label="⚡ Exasol SQL Query Time",
-        value=f"{kpis.get('query_time_ms', 1.2):.2f} ms",
-        delta="Sub-second In-Memory",
-        delta_color="normal"
-    )
+# =========================================================
+# MODE 1: REACT 18 + TYPESCRIPT + TAILWIND CSS EMBEDDED VIEW
+# =========================================================
+if ui_mode.startswith("React 18"):
+    # Clean CSS to display React 18 application edge-to-edge
+    st.markdown("""
+    <style>
+        header[data-testid="stHeader"] {
+            background-color: #F8F6F0 !important;
+        }
+        .block-container {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+            max-width: 100% !important;
+        }
+        iframe {
+            border: none !important;
+            width: 100% !important;
+            min-height: 94vh !important;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
-# --- NAVIGATION TABS ---
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "📊 Executive SOC Command Center",
-    "🛡️ Guardrail & Attack Sandbox",
-    "🔌 MCP Security Firewall",
-    "⚔️ AI Red Team & Stress-Tester",
-    "⚡ Exasol Speed Benchmark",
-    "🤖 AI Compliance Auditor"
-])
+    # Embed the React 18 + TypeScript single-page app directly inside Streamlit!
+    components.iframe(src=react_src_url, height=960, scrolling=True)
 
+# =========================================================
+# MODE 2: NATIVE PYTHON STREAMLIT DASHBOARD
+# =========================================================
+else:
+    # Custom CSS for polished Enterprise Cyber Look
+    st.markdown("""
+    <style>
+        .main-header {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0px;
+        }
+        .sub-header {
+            font-size: 1.02rem;
+            color: #94A3B8;
+            margin-bottom: 18px;
+        }
+        .metric-card {
+            background-color: #1E293B;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid #334155;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
-# ==========================================
-# TAB 1: EXECUTIVE SOC COMMAND CENTER
+    # --- TOP HEADER ---
+    col_head1, col_head2 = st.columns([3, 1])
+    with col_head1:
+        st.markdown(f"<div class='main-header'>🛡️ {APP_NAME}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='sub-header'>{APP_SUBTITLE} • <i>{POWERED_BY}</i></div>", unsafe_allow_html=True)
+    with col_head2:
+        st.metric(
+            label="⚡ Exasol SQL Query Time",
+            value=f"{kpis.get('query_time_ms', 1.2):.2f} ms",
+            delta="Sub-second In-Memory",
+            delta_color="normal"
+        )
+
+    # --- NAVIGATION TABS ---
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+        "📊 Executive SOC Command Center",
+        "🛡️ Guardrail & Attack Sandbox",
+        "🔌 MCP Security Firewall",
+        "⚔️ AI Red Team & Stress-Tester",
+        "⚡ Exasol Speed Benchmark",
+        "🤖 AI Compliance Auditor"
+    ])
 # ==========================================
 with tab1:
     # Metric KPI Row
