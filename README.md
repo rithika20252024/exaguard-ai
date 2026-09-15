@@ -205,7 +205,7 @@ exaguard/
 | **Source Code** | Full repository (`/frontend`, `/backend`, `/core`, `/exasol_db`) | 
 | **Clean README with Project Overview, Setup & Usage Instructions** | [`README.md`](../README.md) | 
 | **Deployment Instructions / Run Guide** | [`DEPLOYMENT.md`](DEPLOYMENT.md) | 
-| **Clean Pitch Deck (PDF or Markdown/PPT)** | [`submission/PITCH_DECK.md`](submission/PITCH_DECK.md) and [`submission/ExaGuard_AI_Hackfest_Deck.pdf`](submission/ExaGuard_AI_Hackfest_Deck.pdf)| 
+| **Clean Pitch Deck (PDF or Markdown/PPT)** | [`submission/PITCH_DECK.md`](submission/PITCH_DECK.md) and [`submission/ExaGuard_AI_Hackfest_Deck.pdf`](submission/ExaGuard_AI_Hackfest_Deck.pdf)pdf of 11 page| 
 | **Short Demo Video (Max 3 Minutes)** | demo video in submission/ExaGuard AI Agent Observability and Governance (2) (1).mp4 in raw file | 
 
 | **License** | [`LICENSE`](../LICENSE) (Apache 2.0) | Verified Complete |
