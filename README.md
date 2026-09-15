@@ -143,7 +143,7 @@ python3 backend/server.py
 | **Effective Use of Exasol Personal** | Exasol Personal is the central data platform. Telemetry streams into columnar tables (`AGENT_TRACES`, `SECURITY_ALERTS`); analytical SQL procedures compute aggregations and in-database 3-Sigma statistical anomalies in under 2 milliseconds. |
 | **Innovation & Problem Impact**  | Solves the primary barrier to generative AI agent adoption: security, trust, and auditability. Features the world's first Model Context Protocol (MCP) JSON-RPC parameter firewall. |
 | **Technical Excellence**  | Full-stack production software architecture combining a type-safe TypeScript React frontend, FastAPI backend, PyExasol driver, and resilient fallback engine. |
-| **Solution Design & User Experience**  | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of informal emoji symbols. |
+| **Solution Design & User Experience**  | Refined light / warm-cream enterprise SaaS design (#F8F6F0 background, white containers, slate typography, Lucide SVG iconography) completely free of inform template. |
 | **Presentation & Documentation**  | Complete pitch deck (`submission/PITCH_DECK.md`), timed video recording script (`submission/DEMO_VIDEO_SCRIPT.md`), deployment guide (`DEPLOYMENT.md`), and clean single initial commit on GitHub. |
 
 ---
