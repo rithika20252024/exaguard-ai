@@ -15,7 +15,8 @@ services:
     build: .
     container_name: exaguard-dashboard
     ports:
-      - "8501:8501"
+      - "8000:8000"
+      - "8501:8000"
     environment:
       - EXASOL_HOST=exasoldb
       - EXASOL_PORT=8563
