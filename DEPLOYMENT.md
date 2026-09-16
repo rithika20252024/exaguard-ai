@@ -95,6 +95,12 @@ Once started, the application is accessible at:
 ExaGuard AI is pre-configured for zero-setup deployment on [Vercel](https://vercel.com). The React/TypeScript frontend is served from Vercel's global CDN while the FastAPI backend runs on Vercel Python Serverless Functions.
 
 #### Method 1: Deploy via Vercel Web Dashboard (Recommended)
+ExaGuard AI is deployed live in production on Vercel:
+
+- **Live Application:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)
+- **Interactive Swagger Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)
+- **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
+  
 1. Go to [vercel.com/new](https://vercel.com/new).
 2. Select your repository: `rithika20252024/exaguard-ai`.
 3. Vercel automatically detects [`vercel.json`](file:///Users/rithika/Downloads/exaguard-ai-main%202/vercel.json) with:
