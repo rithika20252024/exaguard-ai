@@ -100,6 +100,11 @@ Run ExaGuard AI as an isolated, production-ready containerized service using Doc
 #### Prerequisites
 - [Docker Engine](https://docs.docker.com/engine/install/) (v20.10+)
 - [Docker Compose](https://docs.docker.com/compose/) (v2.0+)
+####  Clone the Repository
+```bash
+git clone https://github.com/rithika20252024/exaguard-ai.git
+cd exaguard-ai
+```
 
 #### Option A: One-Command Start with Docker Compose
 To build the image and start the application in the background:
