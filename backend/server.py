@@ -10,7 +10,7 @@ import sys
 # Add project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -42,6 +42,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Middleware to route requests arriving with or without /api prefix (supports Vercel serverless rewrites)
+@app.middleware("http")
+async def normalize_api_path(request: Request, call_next):
+    path = request.scope.get("path", "")
+    if not path.startswith("/api") and not path.startswith("/assets") and path not in ("/", "/docs", "/openapi.json", "/redoc"):
+        api_path = f"/api{path}"
+        for route in app.routes:
+            if getattr(route, "path", None) == api_path:
+                request.scope["path"] = api_path
+                break
+    return await call_next(request)
 
 # Auto-seed initial traces if empty
 kpis = AnalyticsQueries.get_executive_kpis()
@@ -77,6 +89,15 @@ class SeedRequest(BaseModel):
 
 
 # --- REST Endpoints ---
+@app.get("/api")
+def get_api_root():
+    return {
+        "status": "healthy",
+        "message": "ExaGuard AI Enterprise API Gateway",
+        "engine": db_manager.db_engine_name,
+        "is_connected_to_exasol": db_manager.is_connected_to_exasol
+    }
+
 @app.get("/api/health")
 def get_health():
     return {

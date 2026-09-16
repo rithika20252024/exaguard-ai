@@ -87,6 +87,39 @@ Once started, the application is accessible at:
 
 ---
 
+### Vercel Deployment (Cloud Serverless)
+
+ExaGuard AI is pre-configured for zero-setup deployment on [Vercel](https://vercel.com). The React/TypeScript frontend is served from Vercel's global CDN while the FastAPI backend runs on Vercel Python Serverless Functions.
+
+#### Method 1: Deploy via Vercel Web Dashboard (Recommended)
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Select your repository: `rithika20252024/exaguard-ai`.
+3. Vercel automatically detects [`vercel.json`](file:///Users/rithika/Downloads/exaguard-ai-main%202/vercel.json) with:
+   - **Build Command:** `cd frontend && npm install && npm run build`
+   - **Output Directory:** `frontend/dist`
+   - **Serverless API Entrypoint:** `api/index.py`
+4. (Optional) Add environment variables in the Vercel Dashboard if connecting to a cloud Exasol instance:
+   - `EXASOL_HOST`
+   - `EXASOL_PORT`
+   - `EXASOL_USER`
+   - `EXASOL_PASSWORD`
+   *(If omitted, ExaGuard runs in embedded zero-config mode automatically)*
+5. Click **Deploy**.
+
+#### Method 2: Deploy via Vercel CLI
+```bash
+# Login to Vercel
+npx vercel login
+
+# Deploy preview
+npx vercel
+
+# Deploy directly to production
+npx vercel --prod
+```
+
+---
+
 ### Local Deployment (Python + FastAPI Backend)
 
 To run the full-stack platform locally on macOS, Linux, or Windows (WSL):
