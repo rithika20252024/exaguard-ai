@@ -1,0 +1,22 @@
+# Media and submission files
+submission/
+*.mp4
+*.pdf
+
+# Local database files
+*.db
+*.sqlite3
+
+# Python build and cache artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Docker and local tooling
+Dockerfile
+docker-compose.yml
+.dockerignore
+run.sh

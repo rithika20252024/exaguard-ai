@@ -4,6 +4,12 @@
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
   "framework": null,
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{backend/**,core/**,exasol_db/**,simulator/**,config.py}",
+      "excludeFiles": "{frontend/**,submission/**,*.db,*.mp4,*.pdf}"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
