@@ -8,6 +8,9 @@ This document provides complete instructions for running, testing, and deploying
 
 
 
+- **Live Production URL:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)
+- **Interactive Swagger Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)
+- **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
 - **Frontend Bundle:** React 18, TypeScript, Tailwind CSS, Vite
 - **Backend API:** FastAPI REST Gateway with PyExasol integration
 - **Deployment Status:** Active, Continuous Deployment via GitHub `main` branch

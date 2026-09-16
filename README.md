@@ -2,13 +2,17 @@
 
 
 [![Exasol Hackathon](https://img.shields.io/badge/Exasol_Hackathon-AI_Trust%2C_Safety_%26_Governance-0284C7.svg)](https://www.exasol.com/events/exasol-devjam/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?logo=vercel)](https://exaguard-ai-u8os-beryl.vercel.app/)
 [![TypeScript](https://img.shields.io/badge/Frontend-TypeScript_%2B_React-3178C6.svg)](https://www.typescriptlang.org/)
 [![Python 3.10+](https://img.shields.io/badge/Backend-FastAPI_%2B_Python-blue.svg)](https://www.python.org/)
 [![Database](https://img.shields.io/badge/Database-Exasol_Personal-FF6B6B.svg)](https://github.com/exasol/exasol-personal)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 
+> 🚀 **Live Production Deployment:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)  
+> 🛡️ **Interactive Swagger API Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)  
+> 🏥 **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
 >
-ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
+> ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
 
 ---
 
@@ -92,6 +96,16 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 ---
 
 ## 5. Setup & Usage Instructions
+
+### Cloud Deployment (Vercel)
+
+ExaGuard AI is deployed live in production on Vercel:
+
+- **Live Application:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)
+- **Interactive Swagger Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)
+- **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
+
+---
 
 ### Docker Deployment (Recommended)
 
