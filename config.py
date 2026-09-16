@@ -19,6 +19,7 @@ EXASOL_ENCRYPTION = os.getenv("EXASOL_ENCRYPTION", "False").lower() in ("true", 
 # Fallback mode: If Exasol Personal Docker/Cloud is not currently reachable,
 # auto-switch to embedded high-performance in-memory simulation mode so judges can run zero-setup.
 AUTO_FALLBACK_SQLITE = os.getenv("AUTO_FALLBACK_SQLITE", "True").lower() in ("true", "1", "yes")
+SQLITE_DB_PATH = os.getenv("SQLITE_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "exaguard_local.db"))
 
 # Guardrail Detection Thresholds
 MAX_PROMPT_TOKENS = int(os.getenv("MAX_PROMPT_TOKENS", "4096"))

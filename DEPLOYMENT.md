@@ -36,6 +36,50 @@ Internet / Client Browser
 
 ## Deployment 
 
+### Docker Deployment (Recommended)
+
+Run ExaGuard AI as an isolated, production-ready containerized service using Docker and Docker Compose.
+
+#### Prerequisites
+- [Docker Engine](https://docs.docker.com/engine/install/) (v20.10+)
+- [Docker Compose](https://docs.docker.com/compose/) (v2.0+)
+
+#### Option A: One-Command Start with Docker Compose
+To build the image and start the application in the background:
+```bash
+docker compose up -d --build
+```
+
+View live logs:
+```bash
+docker compose logs -f
+```
+
+Stop the containers:
+```bash
+docker compose down
+```
+
+#### Option B: Standalone Docker Run
+To build the image manually:
+```bash
+docker build -t exaguard-ai .
+```
+
+To run the container:
+```bash
+docker run -d \
+  -p 8000:8000 \
+  --name exaguard-ai \
+  exaguard-ai
+```
+
+Once started, the application is accessible at:
+- **Web UI & Dashboard:** `http://localhost:8000`
+- **Interactive Swagger Docs:** `http://localhost:8000/docs`
+- **Health Check:** `http://localhost:8000/api/health`
+
+---
 
 ### Local Deployment (Python + FastAPI Backend)
 

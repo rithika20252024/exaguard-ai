@@ -68,7 +68,8 @@ class ExasolDBManager:
 
     def _init_sqlite_fallback(self):
         """Initialize SQLite database with equivalent schema."""
-        db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "exaguard_local.db")
+        db_path = getattr(config, "SQLITE_DB_PATH", os.path.join(os.path.dirname(os.path.dirname(__file__)), "exaguard_local.db"))
+        os.makedirs(os.path.dirname(os.path.abspath(db_path)), exist_ok=True)
         self.sqlite_conn = sqlite3.connect(db_path, check_same_thread=False)
         cursor = self.sqlite_conn.cursor()
 

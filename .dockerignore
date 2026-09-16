@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+
+# Node & Frontend dependencies and local outputs
+frontend/node_modules/
+frontend/.vite/
+frontend/dist/
+
+# Large submission assets & media
+submission/*.mp4
+submission/*.pdf
+
+# Local database file (managed via volume if persistence needed)
+*.db
+*.sqlite3
+
+# Environment files
+.env.local
+.env.*.local
+
+# IDE & OS files
+.DS_Store
+.vscode/
+.idea/
