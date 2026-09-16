@@ -8,9 +8,9 @@
 [![Database](https://img.shields.io/badge/Database-Exasol_Personal-FF6B6B.svg)](https://github.com/exasol/exasol-personal)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 
-> 🚀 **Live Production Deployment:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)  
-> 🛡️ **Interactive Swagger API Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)  
-> 🏥 **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
+> **Live Production Deployment:** [https://exaguard-ai-u8os-beryl.vercel.app/](https://exaguard-ai-u8os-beryl.vercel.app/)  
+> **Interactive Swagger API Docs:** [https://exaguard-ai-u8os-beryl.vercel.app/docs](https://exaguard-ai-u8os-beryl.vercel.app/docs)  
+> **API Health Check:** [https://exaguard-ai-u8os-beryl.vercel.app/api/health](https://exaguard-ai-u8os-beryl.vercel.app/api/health)
 >
 > ExaGuard AI is an enterprise-grade observability, security guardrail, and regulatory compliance platform designed for autonomous multi-agent systems and Model Context Protocol (MCP) integrations, powered by the high-performance in-memory columnar engine of **Exasol Personal**.
 
