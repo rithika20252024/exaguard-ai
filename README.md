@@ -97,7 +97,7 @@ ExaGuard organizes agent telemetry into four high-performance relational tables 
 
 ## 5. Setup & Usage Instructions
 
-### Cloud Deployment (Vercel)
+### Cloud Deployment (Vercel)(Recommended)
 
 ExaGuard AI is deployed live in production on Vercel:
 
